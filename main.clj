@@ -21,13 +21,29 @@
 (def prompt2 "to perfrom (+, -, *, /)")
 (def prompt (str prompt1 prompt2))
 (println prompt)
-(flush); to ensure prompt message precedes variable assignment 
 
 ; declaring a variable called useOP and assigning it character by extracting first character of user inputted string 
-(let [useOP (subs (read-line) 0 1) ]
-  (println "The value of useOP is " useOP)) 
+(def useOP (subs (read-line) 0 1))
 
-; pr
+; prompting user for first operand, returns value 1 
+(defn val1 []
+  (print "Enter value 1: ")
+  (flush); to flush out buffer
+  (Double/parseDouble (read-line))) 
+
+; prompting user for second operand, returns value 1 
+(defn val2 []
+  (print "Enter value 2: ")
+  (flush); to flush out buffer
+  (Double/parseDouble (read-line))) 
+
+(defn calcSum []
+  (let [x (add (val1) (val2))]
+    (println "sum = " x)))
+
+(calcSum)
+
+
 
 
 ; for loop
@@ -38,9 +54,9 @@
 ; map
 ; filter
 ;----------------------------
-; double declaration 
-; double assignment 
-; print double
+; double declaration @
+; double assignment @
+; print double @
 
 ; char declaration @
 ; char assignment @
